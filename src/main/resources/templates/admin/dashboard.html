@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="/admin/admin-layout">
+	  
+<head>
+<meta charset="ISO-8859-1">
+<title>Dashboard</title>
+</head>
+<body>
+	
+	<div layout:fragment="content">
+	
+	
+	  
+                <div class="row">
+                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-4">
+                        <div class="card-box tilebox-one">
+                          
+                            
+                            <h2 class="m-b-20" th:text="#{totalUser} + ${totaluser}">:<span data-plugin="counterup"></span></h2>
+                           
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-4">
+                        <div class="card-box tilebox-one">
+                        
+                            
+                            <h2 class="m-b-20" th:text="#{totalMaleUser} + ${maleuser}">:<span data-plugin="counterup"></span></h2>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6 col-lg-6 col-xl-4">
+                        <div class="card-box tilebox-one">
+                         
+                            
+                            <h2 class="m-b-20" th:text="#{totalFemaleUser} + ${femaleuser}">: <span data-plugin="counterup"></span></h2>
+                           
+                        </div>
+            		</div><br>
+
+
+
+
+
+
+
+
+   </div>
+
+</body>
+</html>

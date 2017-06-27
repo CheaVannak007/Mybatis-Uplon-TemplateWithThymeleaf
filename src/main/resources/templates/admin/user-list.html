@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="/admin/admin-layout">
+<head>
+<meta charset="ISO-8859-1">
+<title>User List</title>
+</head>
+<body>
+<div layout:fragment="content">
+
+						<div class="p-20">
+						<h2 th:text="#{ListUser}">User List</h2></form><br>
+						<div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                            <tr>
+                                                <th th:text="#{id}"></th>
+                                                <th th:text="#{username}"></th>
+                                                <th th:text="#{email}"></th>
+                                                <th th:text="#{gender}"></th>
+                                                 <th th:text="#{phonenumber}"></th>
+                                                   <th th:text="#{action}"></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr class="table-active" th:each="user : ${USERS}" th:object="${user}">
+                                                <th th:text="*{id}"></th>
+                                                <td th:text="*{userName}"></td>
+                                                <td th:text="*{Email}"></td>
+                                                <td th:text="*{Gender}"></td>
+                                                <td th:text="*{phoneNumber}"></td>
+                                                <td>
+	                                                <a class="label label-danger" th:href="@{/user/{userHash}/delete(userHash=${user.userHash})}"
+	                                                								 th:text="#{delete}">Delete</a>
+	                                                <a class="label label-danger" th:href="@{/user/{userHash}/update(userHash=${user.userHash})}"
+	                                                								 th:text="#{updateuser}">Update</a>
+	                                                <a class="label label-danger" th:href="@{/admin/{userHash}/user-detail(userHash=${user.userHash})}" 
+	                                                								 th:text="#{detail}" >Detail</a>                                               
+                                                </td>
+                           	
+                                            </tr>
+                                                                          
+                                            </tbody>
+                                        </table>
+                       
+                       
+                       </div>
+                        </div>
+
+
+</div>
+</body>
+</html>

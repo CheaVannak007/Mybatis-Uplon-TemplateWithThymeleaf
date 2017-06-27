@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="/admin/admin-layout">
+<head>
+<meta charset="ISO-8859-1">
+<title>User Update</title>
+</head>
+<body>
+<div  layout:fragment="content">
+
+  <table class="tablesaw m-t-20 table m-b-0" data-tablesaw-mode="stack">
+  		      
+  		       <tr th:each="user : ${USERS}" th:object="${user}">
+		        <td th:text="#{username}"></td>
+		        <td th:text="*{userName}"></td>
+		      </tr>
+		    	<tr th:each="user : ${USERS}" th:object="${user}">
+		            <td th:text="#{email}"></td>
+		       		<td th:text="*{email}"></td>
+		    	</tr>
+		    	<tr th:each="user : ${USERS}" th:object="${user}">
+		            <td th:text="#{gender}"></td>
+		       		<td th:text="*{gender}"></td>
+		    	</tr>
+		    	<tr th:each="user : ${USERS}" th:object="${user}">
+		            <td th:text="#{phonenumber}"></td>
+		       		<td th:text="*{phoneNumber}"></td>
+		    	</tr>                              
+  
+  
+  
+  
+   </table>
+
+</div>
+</body>
+</html>
